@@ -1,3 +1,4 @@
+/* Define color variables */
 html {
   --color-orange: oklch(0.72 0.23 35.81);
   --color-white: oklch(1 0 0);
@@ -16,16 +17,18 @@ html {
   }
 }
 
+/* General body styling */
 body {
   background-color: var(--color-orange);
   font-family: 'Space Mono', monospace;
   width: var(--width);
   height: var(--height);
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
-h1,
-h2,
-h3 {
+/* Headings */
+h1, h2, h3 {
   margin: 0;
   text-transform: uppercase;
   font-weight: 700;
@@ -34,6 +37,7 @@ h3 {
   justify-content: space-between;
 }
 
+/* Specific heading styles */
 h1 {
   font-size: 88px;
   line-height: 81%;
@@ -49,9 +53,7 @@ h3 {
   text-transform: uppercase;
 }
 
-h3,
-label,
-.label {
+h3, label, .label {
   font-size: 16px;
   line-height: 100%;
   margin: 0;
@@ -63,6 +65,7 @@ p {
   margin: 0;
 }
 
+/* Flex utilities */
 .grow {
   flex-grow: 1;
   text-transform: uppercase;
@@ -77,6 +80,7 @@ p {
   box-sizing: border-box;
 }
 
+/* Button styling */
 .button {
   text-decoration: none;
   text-align: center;
@@ -90,10 +94,8 @@ p {
 }
 
 .button.critical {
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-background);
-    background-color: var(--color-foreground);
-  }
+  color: var(--color-background);
+  background-color: var(--color-foreground);
 }
 
 .button.critical:hover {
@@ -101,33 +103,18 @@ p {
   background-color: var(--color-dark-red);
 }
 
-#main,
-#settings {
-  box-sizing: border-box;
+/* Popup styling */
+.popup {
+  background-color: var(--color-black); /* Black background for the popup */
+  color: var(--color-white); /* White text color */
+  padding: 20px; /* Adjust as needed */
+  border-radius: 8px; /* Optional: Rounded corners */
+  position: relative;
   width: var(--width);
   height: var(--height);
-  position: fixed;
 }
 
-#settings {
-  color: var(--color-foreground);
-  position: fixed;
-  overflow: scroll;
-  background-color: var(--color-background);
-  left: var(--width);
-  top: 0;
-  transition: left 0.3s cubic-bezier(0.83, 0, 0.17, 1);
-}
-
-.show-settings #settings {
-  left: 0;
-}
-
-.settings {
-  padding-top: 32px;
-  gap: 48px;
-}
-
+/* Form styling */
 form {
   display: flex;
   flex-direction: column;
@@ -193,6 +180,7 @@ input:focus {
   color: var(--color-light-gray);
 }
 
+/* Navbar styling */
 .navbar {
   background-color: var(--color-background);
   position: sticky;
@@ -202,6 +190,7 @@ input:focus {
   right: 0;
 }
 
+/* Switch styling */
 #switch {
   cursor: pointer;
   position: fixed;
@@ -235,6 +224,7 @@ input:focus {
   transform: matrix(1, -0.5, 0.5, 0.85, 0, -8)
 }
 
+/* Backdrop and backdrop-blur styling */
 #backdrop {
   position: fixed;
   top: -32px;
@@ -257,14 +247,15 @@ input:focus {
   background-size: 200px;
 }
 
+/* Button container */
 #buttons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    transform: scale(1.5);
-    background-color: var(--color-orange);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  transform: scale(1.5);
+  background-color: var(--color-orange);
 }
 
 #buttons .button-wrapper {
-    padding: 2px;
+  padding: 2px;
 }
