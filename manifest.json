@@ -2,8 +2,8 @@
   "name": "Button Stealer",
   "description": "Steals buttons from the websites you visit. Do your usual online stuff and watch the collection of stolen buttons grow.",
   "version": "1.0.2",
-  "manifest_version": 3,
-  "action": {
+  "manifest_version": 2,
+  "browser_action": {
     "default_icon": {
       "16": "images/icon-light-16.png",
       "32": "images/icon-light-32.png"
@@ -17,11 +17,10 @@
     "128": "images/icon-light-128.png"
   },
   "permissions": [
-    "storage",
-    "offscreen"
+    "storage"
   ],
   "background": {
-    "service_worker": "scripts/service-worker.js"
+    "scripts": ["scripts/background.js"]
   },
   "content_scripts": [
     {
@@ -34,3 +33,4 @@
     }
   ]
 }
+
